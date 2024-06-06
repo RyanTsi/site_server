@@ -10,6 +10,7 @@ pub enum Error {
     UnexpectedDataInModel,
     RowNotFound,
     UserNotFound,
+    IOError,
 }
 
 impl From<sqlx::Error> for Error {
@@ -33,6 +34,7 @@ impl IntoResponse for Error {
             Error::UserNotFound => {
                 (StatusCode::INTERNAL_SERVER_ERROR, "User Not Found in database").into_response()
             }
+            Error::IOError => todo!(),
         }
     }
 }

@@ -16,7 +16,7 @@ type Uuid = String;
 
 #[derive(Clone)]
 pub struct AppState {
-    pub db: Database,
+    pub db: Database
 }
 
 impl AppState {
