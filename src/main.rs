@@ -18,11 +18,11 @@ async fn main () -> Result<()> {
     let app = Router::new()
         .route("/", get(|| async {"running..."}))
         .nest("/api", api_route(state))
-            .layer(CorsLayer::new()
-                .allow_methods(vec![Method::GET, Method::POST])
-                .allow_origin(any()));
+        .layer(CorsLayer::new()
+            .allow_methods(vec![Method::GET, Method::POST])
+            .allow_origin(any()));
 
-        let listener = tokio::net::TcpListener::bind("0.0.0.0:8210").await.unwrap();
+        let listener = tokio::net::TcpListener::bind("0.0.0.0:8300").await.unwrap();
         log::info!("LISTENING on {:?}\n", listener.local_addr());
 
         axum::serve(listener, app).await.unwrap();

@@ -16,7 +16,7 @@ pub fn api_route(state: Arc<AppState>) -> Router {
         .nest("/post", post_route(state.clone()))
         .nest("/user", user_route(state.clone()))
         .route("/chatlist", get(handler_chat_list).with_state(state.clone()))
-        .route("/upload", post(handler_upload).with_state(state.clone()))
+        // .route("/upload", post(handler_upload).with_state(state.clone()))
 }
 
 fn post_route(state: Arc<AppState>) -> Router {

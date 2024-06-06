@@ -8,7 +8,7 @@ use serde::de;
 use serde_json::json;
 
 async fn post_test() -> Result<()> {
-    let hc = httpc_test::new_client("http://localhost:8216")?;
+    let hc = httpc_test::new_client("http://localhost:8300")?;
     let req_create_post = hc.do_post(
         "/api/post/create", 
         json!({
@@ -58,7 +58,7 @@ async fn post_test() -> Result<()> {
 
 
 async fn user_test() -> Result<()> {
-    let hc = httpc_test::new_client("http://localhost:8216")?;
+    let hc = httpc_test::new_client("http://localhost:8300")?;
     let req_register_user = hc.do_post(
         "/api/user/register", 
         json!({
@@ -120,7 +120,7 @@ async fn user_test() -> Result<()> {
 
 
 async fn meg_test() -> Result<()> {
-    let hc = httpc_test::new_client("http://localhost:8216")?;
+    let hc = httpc_test::new_client("http://localhost:8300")?;
     let remark = hc.do_post(
         "/api/user/remark", 
         json!({
@@ -154,7 +154,7 @@ async fn meg_test() -> Result<()> {
 
 #[tokio::test]
 async fn qdev() -> Result<()> {
-    let hc = httpc_test::new_client("http://localhost:8216")?;
+    let hc = httpc_test::new_client("http://localhost:8300")?;
 
     hc.do_get("/").await?.print().await?;
 
