@@ -1,0 +1,1 @@
+cargo watch -q -c -w tests/ -x "test -q qdev -- --nocapture"
