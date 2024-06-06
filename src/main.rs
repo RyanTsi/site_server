@@ -18,7 +18,7 @@ async fn main () -> Result<()> {
         .route("/", get(|| async {"running..."}))
         .nest("/api", api_route(state));
 
-        let listener = tokio::net::TcpListener::bind("0.0.0.0:8216").await.unwrap();
+        let listener = tokio::net::TcpListener::bind("0.0.0.0:8210").await.unwrap();
         log::info!("LISTENING on {:?}\n", listener.local_addr());
 
         axum::serve(listener, app).await.unwrap();

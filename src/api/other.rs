@@ -17,3 +17,9 @@ pub async fn handler_chat_list(
         }
     }
 }
+
+pub async fn handler_upload(
+    State(state): State<Arc<AppState>>
+) -> Result<impl IntoResponse> {
+    Ok(())
+}
