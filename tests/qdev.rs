@@ -151,6 +151,32 @@ async fn meg_test() -> Result<()> {
     Ok(())
 }
 
+async fn basic_tset() -> Result<()> {
+    let hc = httpc_test::new_client("http://localhost:8300")?;
+    hc.do_get("/api/basicinfo").await?.print().await?;
+    let update = hc.do_post(
+        "/api/updateinfo", 
+        json!({
+            "sitebasicinfo": {
+                "title": "9999",
+                "subtitle": "",
+                "description": "",
+                "author": "",
+                "favicon": "",
+                "avatar": ""
+            },
+            "mylinks": {
+                "github": "",
+                "bilibili": "",
+                "zhihu": "",
+                "qq": "",
+                "wechat": "",
+                "gitee": ""
+            }
+        })
+    ).await?.print().await?;
+    Ok(())
+}
 
 #[tokio::test]
 async fn qdev() -> Result<()> {
@@ -163,5 +189,7 @@ async fn qdev() -> Result<()> {
     meg_test().await?;
 
     user_test().await?;
+    
+    basic_tset().await?;
     Ok(())
 }

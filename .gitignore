@@ -1,1 +1,6 @@
 /target
+readme.pdf
+.env
+/test
+/res
+dev.sh

@@ -1,6 +1,7 @@
 use std::result;
 
 use axum::{http::StatusCode, response::IntoResponse};
+use tokio::io;
 
 pub type Result<T> = result::Result<T, Error>;
 
@@ -16,6 +17,12 @@ pub enum Error {
 impl From<sqlx::Error> for Error {
     fn from(e: sqlx::Error) -> Self {
         Error::DbError(e)
+    }
+}
+
+impl From<io::Error> for Error {
+    fn from(value: io::Error) -> Self {
+        Self::IOError
     }
 }
 

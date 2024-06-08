@@ -100,7 +100,7 @@ http://124.223.209.159:8300/api
 
 #### List Post Remarks
 
-- **Description**: 得到文章内容
+- **Description**: 得到文章对应的评论内容
 - **URL**: `/post/remarks`
 - **Method**: GET
 - **Query Parameters**:
@@ -270,3 +270,83 @@ http://124.223.209.159:8300/api
     ...
   ]
   ```
+
+### `/uoload`
+
+- **Description**: 上传文件
+- **URL**: `/upload`
+- **Method**: POST
+- **Request Body**:
+  - Content-Type: multipart/form-data
+  - Fields:
+    - file: 文件内容，类型为 file，即要上传的文件。
+- **Response**:
+  - **Status**: 200 OK
+
+### `/resouce`
+
+- **Description**: 静态文件访问
+- **URL**: `/resouce/{file/path}`
+- **Method**: GET
+- **Response**:
+  - **Status**: 200 OK
+
+> ps: 请传入的文件名做好唯一性区别，传入的文件内容要求小于 2MB
+
+### `/basic_info`
+
+- **Description**: 网站信息
+- **URL**: `/basicinfo`
+- **Method**: GET
+- **Response**:
+  - **Status**: 200 OK
+  - **Body**:
+  ```json
+  {
+    "sitebasicinfo": {
+      "title": "",
+      "subtitle": "",
+      "description": "",
+      "author": "",
+      "favicon": "",
+      "avatar": ""
+    },
+    "mylinks": {
+      "github": "",
+      "bilibili": "",
+      "zhihu": "",
+      "qq": "",
+      "wechat": null,
+      "gitee": ""
+    }
+  }
+  ```
+
+### basic_info_update
+
+- **Description**: 更新网站信息
+- **URL**: `/updatebasicinfo`
+- **Method**: POST
+- **Request Body**:
+```json
+{
+  "sitebasicinfo": {
+    "title": "",
+    "subtitle": "",
+    "description": "",
+    "author": "",
+    "favicon": "",
+    "avatar": ""
+  },
+  "mylinks": {
+    "github": "",
+    "bilibili": "",
+    "zhihu": "",
+    "qq": "",
+    "wechat": null,
+    "gitee": ""
+  }
+}
+```
+- **Response**:
+  - **Status**: 200 OK

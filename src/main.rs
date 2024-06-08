@@ -19,7 +19,8 @@ async fn main () -> Result<()> {
         .route("/", get(|| async {"running..."}))
         .nest("/api", api_route(state))
         .layer(CorsLayer::new()
-            .allow_methods(vec![Method::GET, Method::POST])
+            .allow_methods(any())
+            .allow_headers(any())
             .allow_origin(any()));
 
         let listener = tokio::net::TcpListener::bind("0.0.0.0:8300").await.unwrap();
