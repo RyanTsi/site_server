@@ -8,7 +8,7 @@ use axum::{routing::{get, post}, Router};
 use other::{handler_basic_info, handler_chat_list, handler_update_basic_info, handler_upload};
 use post::{handler_create_post, handler_delete_post, handler_list_postinfo, handler_post_content, handler_remark_list, handler_update_post};
 use tower_http::services::ServeDir;
-use user::{handler_chat, handler_delete_user, handler_login, handler_register_user, handler_remark, handler_update_user};
+use user::{handler_chat, handler_delete_user, handler_login, handler_register_user, handler_remark, handler_update_user, handler_user_info};
 
 use crate::AppState;
 
@@ -42,5 +42,6 @@ fn user_route(state: Arc<AppState>) -> Router {
         .route("/login", post(handler_login))
         .route("/remark", post(handler_remark))
         .route("/chat", post(handler_chat))
+        .route("/info", get(handler_user_info))
         .with_state(state)
 }

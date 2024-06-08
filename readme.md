@@ -213,6 +213,26 @@ http://124.223.209.159:8300/api
     "User Not Found
     ```
 
+#### User Info
+
+- **Description**: 得到用户信息
+- **URL**: `/user/info`
+- **Method**: GET
+- **Query Parameters**:
+  - `uid`: int
+- **Response**:
+  - **Status**: 200 OK
+  - **Body**: 
+  ```json
+   {
+    "uid": 10000000,
+    "name": "root",
+    "avatar": null,
+    "bio": null,
+    "created_at": "2024-06-06T07:47:26Z"
+  }
+  ```
+
 #### Add Remark
 
 - **Description**: 用户发表评论
@@ -271,7 +291,7 @@ http://124.223.209.159:8300/api
   ]
   ```
 
-### `/uoload`
+### Upload
 
 - **Description**: 上传文件
 - **URL**: `/upload`
@@ -283,7 +303,9 @@ http://124.223.209.159:8300/api
 - **Response**:
   - **Status**: 200 OK
 
-### `/resouce`
+> ps: 请传入的文件名做好唯一性区别，传入的文件内容要求小于 2MB
+
+### resouce
 
 - **Description**: 静态文件访问
 - **URL**: `/resouce/{file/path}`
@@ -291,9 +313,8 @@ http://124.223.209.159:8300/api
 - **Response**:
   - **Status**: 200 OK
 
-> ps: 请传入的文件名做好唯一性区别，传入的文件内容要求小于 2MB
 
-### `/basic_info`
+### basic_info
 
 - **Description**: 网站信息
 - **URL**: `/basicinfo`
@@ -325,7 +346,7 @@ http://124.223.209.159:8300/api
 ### basic_info_update
 
 - **Description**: 更新网站信息
-- **URL**: `/updatebasicinfo`
+- **URL**: `/updateinfo`
 - **Method**: POST
 - **Request Body**:
 ```json

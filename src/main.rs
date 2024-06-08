@@ -1,6 +1,6 @@
 use std::sync::Arc;
 
-use axum::{http::Method, routing::get, Router};
+use axum::{routing::get, Router};
 use site_server::{api::api_route, error::Result, AppState};
 use tower_http::cors::{any, CorsLayer};
 

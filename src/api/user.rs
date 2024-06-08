@@ -1,9 +1,10 @@
 use std::sync::Arc;
 
-use axum::{extract::State, response::IntoResponse, Json};
+use axum::{extract::{Query, State}, response::IntoResponse, Json};
 use serde::{Deserialize, Serialize};
+use sqlx::query;
 
-use crate::{error::Result, model::User, AppState, Uuid};
+use crate::{api::user, error::Result, model::User, AppState, Uuid};
 
 #[derive(Deserialize)]
 pub struct RegisterUserParams {
@@ -139,4 +140,26 @@ pub async fn handler_chat(
     log::info!("HANDLE {:<12}", "chat");
     state.db.push_chatmsg(params.uid, &params.content).await?;
     Ok(())
+}
+
+
+#[derive(Deserialize)]
+pub struct UidParams {
+    uid: u32,
+}
+
+pub async fn handler_user_info(
+    State(state): State<Arc<AppState>>,
+    Query(query): Query<UidParams>
+) -> Result<impl IntoResponse> {
+    log::info!("HANDLE {:<12}", "user info");
+    match state.db.get_user_info(query.uid).await {
+        Ok(userinfo) => {
+            Ok(Json(userinfo))
+        }
+        Err(e) => {
+            Err(e)
+        }
+    }
+
 }

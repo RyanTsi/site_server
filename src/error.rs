@@ -21,7 +21,7 @@ impl From<sqlx::Error> for Error {
 }
 
 impl From<io::Error> for Error {
-    fn from(value: io::Error) -> Self {
+    fn from(_: io::Error) -> Self {
         Self::IOError
     }
 }
