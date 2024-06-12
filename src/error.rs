@@ -41,7 +41,9 @@ impl IntoResponse for Error {
             Error::UserNotFound => {
                 (StatusCode::INTERNAL_SERVER_ERROR, "User Not Found in database").into_response()
             }
-            Error::IOError => todo!(),
+            Error::IOError =>  {
+                (StatusCode::INTERNAL_SERVER_ERROR, "IO Error").into_response()
+            },
         }
     }
 }
