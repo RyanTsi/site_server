@@ -10,7 +10,6 @@ pub async fn handler_basic_info(
     State(state): State<Arc<AppState>>,
 ) -> Result<impl IntoResponse> {
     log::info!("HANDLE {:<12}", "basic info");
-    // let config = state.config.lock().unwrap();
     Ok(Json(state.config.clone()))
 }
 

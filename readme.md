@@ -1,14 +1,33 @@
-# API Documentation
+# Rusite Server
 
-## Base URL
+为了弥补市面上一些博客框架上（例如 Hexo）不具备动态性的缺点，开发了这款基于 Rust Axum 实现的后端服务程序，利用 Rust 的优势实现了高并发，且保证了内存安全，具有更快的相应速度。主要实现的功能有以下几点：
+  1. 留出了推送博文的接口，使得任何专业的人能够方便地进行存储并在网上发布博文。
+  2. 留出了用户评论的接口，可以让用户对特定的文章发表评论，促进交流。
+  3. 具有留言板/聊天室的功能，可以使得多人实时交流心得体会，留下足迹。
+  4. 实现对已存储的博文进行分类，按照标签将博文进行分类，便于用户进行检索。
+  5. 具有存储小文件的功能，留出了上传图片并存储的接口，可供用户制作相册等。
+  6. 留出了修改网站信息的接口。
+
+数据库采用了 MariaDB 来存储数据，设计了以下主要的表结构：
+  1. users 用户表
+  2. posts 博文表
+  3. tags  标签表
+  4. post_tags 博文标签链接表
+  5. remarks 评论表
+  6. chat_messages 留言板/聊天室消息表
+
+
+## API Documentation
+
+### Base URL
 
 http://124.223.209.159:8300/api
 
-## Routes
+### Routes
 
-### `/post`
+#### `/post`
 
-#### Create Post
+##### Create Post
 
 - **Description**: 创建一篇文章
 - **URL**: `/post/create`
@@ -26,7 +45,7 @@ http://124.223.209.159:8300/api
 - **Response**:
   - **Status**: 200 OK 
 
-#### Delete Post
+##### Delete Post
 
 - **Description**: 删除一篇文章
 - **URL**: `/post/delete`
@@ -44,7 +63,7 @@ http://124.223.209.159:8300/api
     "Data Not Found in database"
     ```
 
-#### Update Post
+##### Update Post
 
 - **Description**: 更新一篇文章
 - **URL**: `/post/update`
@@ -62,7 +81,7 @@ http://124.223.209.159:8300/api
 - **Response**:
   - **Status**: 200 OK
 
-#### List Post Information
+##### List Post Information
 
 - **Description**: 得到文章列表
 - **URL**: `/post/infolist`
@@ -84,7 +103,7 @@ http://124.223.209.159:8300/api
     ]
   ```
 
-#### Get Post Content
+##### Get Post Content
 
 - **Description**: 得到文章内容
 - **URL**: `/post/content`
@@ -98,7 +117,7 @@ http://124.223.209.159:8300/api
     Content 内容 String
   ```
 
-#### List Post Remarks
+##### List Post Remarks
 
 - **Description**: 得到文章对应的评论内容
 - **URL**: `/post/remarks`
@@ -120,9 +139,9 @@ http://124.223.209.159:8300/api
   ```
 
 
-### `/user`
+#### `/user`
 
-#### Register User
+##### Register User
 
 - **Description**: 注册一名用户
 - **URL**: `/user/register`
@@ -141,7 +160,7 @@ http://124.223.209.159:8300/api
     uid
    ```
 
-#### Delete User
+##### Delete User
 
 - **Description**: 注销一名用户
 - **URL**: `/user/delete`
@@ -155,7 +174,7 @@ http://124.223.209.159:8300/api
 - **Response**:
   - **Status**: 200 OK
   
-#### Update User
+##### Update User
 
 - **Description**: 更新用户信息
 - **URL**: `/user/update`
@@ -173,7 +192,7 @@ http://124.223.209.159:8300/api
 - **Response**:
   - **Status**: 200 OK
 
-#### User Login
+##### User Login
 
 - **Description**: 用户登陆
 - **URL**: `/user/login`
@@ -213,7 +232,7 @@ http://124.223.209.159:8300/api
     "User Not Found
     ```
 
-#### User Info
+##### User Info
 
 - **Description**: 得到用户信息
 - **URL**: `/user/info`
@@ -233,7 +252,7 @@ http://124.223.209.159:8300/api
   }
   ```
 
-#### Add Remark
+##### Add Remark
 
 - **Description**: 用户发表评论
 - **URL**: `/user/remark`
@@ -249,7 +268,7 @@ http://124.223.209.159:8300/api
 - **Response**:
   - **Status**: 200 OK
 
-#### Add Chat
+##### Add Chat
 
 - **Description**: 用户聊天
 - **URL**: `/user/chat`
@@ -265,7 +284,7 @@ http://124.223.209.159:8300/api
   - **Status**: 200 OK
 
 
-### `/chatlist`
+#### `/chatlist`
 
 - **Description**: 聊天消息列表
 - **URL**: `/chatlist`
@@ -291,7 +310,7 @@ http://124.223.209.159:8300/api
   ]
   ```
 
-### Upload
+#### Upload
 
 - **Description**: 上传文件
 - **URL**: `/upload`
@@ -305,7 +324,7 @@ http://124.223.209.159:8300/api
 
 > ps: 请传入的文件名做好唯一性区别，传入的文件内容要求小于 2MB
 
-### resouce
+#### resouce
 
 - **Description**: 静态文件访问
 - **URL**: `/resouce/{file/path}`
@@ -314,7 +333,7 @@ http://124.223.209.159:8300/api
   - **Status**: 200 OK
 
 
-### basic_info
+#### basic_info
 
 - **Description**: 网站信息
 - **URL**: `/basicinfo`
@@ -343,7 +362,7 @@ http://124.223.209.159:8300/api
   }
   ```
 
-### basic_info_update
+#### basic_info_update
 
 - **Description**: 更新网站信息
 - **URL**: `/updateinfo`

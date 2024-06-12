@@ -2,7 +2,6 @@ use std::sync::Arc;
 
 use axum::{extract::{Query, State}, response::IntoResponse, Json};
 use serde::{Deserialize, Serialize};
-use sqlx::query;
 
 use crate::{api::user, error::Result, model::User, AppState, Uuid};
 
