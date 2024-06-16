@@ -1,7 +1,6 @@
-use std::{collections::HashMap, env, result, time::Duration};
+use std::{env, result, time::Duration};
 
-use sqlx::{mysql::MySqlPoolOptions, pool, MySql, Pool, Row};
-use tokio::stream;
+use sqlx::{mysql::MySqlPoolOptions, MySql, Pool};
 
 use crate::{error::{Error, Result}, model::{Message, PostInfo, User}, Uuid};
 

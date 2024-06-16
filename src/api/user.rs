@@ -3,7 +3,7 @@ use std::sync::Arc;
 use axum::{extract::{Query, State}, response::IntoResponse, Json};
 use serde::{Deserialize, Serialize};
 
-use crate::{api::user, error::Result, model::User, AppState, Uuid};
+use crate::{error::Result, model::User, AppState, Uuid};
 
 #[derive(Deserialize)]
 pub struct RegisterUserParams {

@@ -3,7 +3,7 @@ use std::sync::Arc;
 use axum::{extract::{Multipart, State}, response::IntoResponse, Json};
 use tokio::{fs::File, io::AsyncWriteExt};
 
-use crate::{config::{self, PartialConfig}, error::{Error, Result}, AppState};
+use crate::{config::PartialConfig, error::{Error, Result}, AppState};
 
 
 pub async fn handler_basic_info(

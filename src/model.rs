@@ -49,17 +49,16 @@ pub struct PostInfo {
     pub updated_at: DateTime<Utc>,
 }
 
-
 #[derive(Debug, Clone)]
 pub struct Post {
-    postinfo: PostInfo,
+    pub postinfo: PostInfo,
     pub tags: Vec<String>,
-    content: String,
+    pub content: String,
 }
 
 #[derive(Clone)]
 pub struct PostList {
-    postlist: SafeVec<Post>,
+    pub postlist: SafeVec<Post>,
 }
 
 impl PostList {
@@ -97,7 +96,6 @@ impl TagMap {
     }
 }
 
-
 #[derive(Debug, Serialize, Deserialize, sqlx::FromRow)]
 pub struct User {
     pub uid: u32,
@@ -106,7 +104,6 @@ pub struct User {
     pub bio: Option<String>,
     pub created_at: DateTime<Utc>,
 }
-
 
 #[derive(Debug, Serialize, Deserialize, sqlx::FromRow)]
 pub struct Message {

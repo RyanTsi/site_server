@@ -2,7 +2,7 @@ use std::sync::Arc;
 
 use axum::{routing::get, Router};
 use site_server::{api::api_route, error::Result, AppState};
-use tower_http::cors::{any, CorsLayer};
+use tower_http::cors::{Any, CorsLayer};
 
 
 async fn initialize() -> Result<Arc<AppState>> {
@@ -19,9 +19,9 @@ async fn main () -> Result<()> {
         .route("/", get(|| async {"running..."}))
         .nest("/api", api_route(state))
         .layer(CorsLayer::new()
-            .allow_methods(any())
-            .allow_headers(any())
-            .allow_origin(any()));
+            .allow_methods(Any)
+            .allow_headers(Any)
+            .allow_origin(Any));
 
         let listener = tokio::net::TcpListener::bind("0.0.0.0:8300").await.unwrap();
         log::info!("LISTENING on {:?}\n", listener.local_addr());
