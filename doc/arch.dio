@@ -1,0 +1,64 @@
+<mxfile host="65bd71144e" scale="5" border="0">
+    <diagram id="auifndeI3sR_Qs0ifLjL" name="第 1 页">
+        <mxGraphModel dx="1128" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="73" value="" style="group;verticalAlign=top;textDirection=ltr;" vertex="1" connectable="0" parent="1">
+                    <mxGeometry x="124" y="170" width="580" height="750" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" value="用户" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="73">
+                    <mxGeometry width="580.0000000000001" height="181.45161290322577" as="geometry"/>
+                </mxCell>
+                <mxCell id="56" value="博主" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="41">
+                    <mxGeometry x="99.57081545064379" y="54.43548387096773" width="149.35622317596568" height="72.58064516129029" as="geometry"/>
+                </mxCell>
+                <mxCell id="57" value="一般用户" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="41">
+                    <mxGeometry x="336.0515021459228" y="54.43548387096773" width="149.35622317596568" height="72.58064516129029" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" value="前端" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="73">
+                    <mxGeometry y="181.45161290322577" width="580.0000000000001" height="241.93548387096772" as="geometry"/>
+                </mxCell>
+                <mxCell id="60" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="44">
+                    <mxGeometry x="261.37339055793996" y="24.193548387096772" width="286.2660944206009" height="193.54838709677418" as="geometry"/>
+                </mxCell>
+                <mxCell id="62" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="44">
+                    <mxGeometry x="49.785407725321896" y="24.193548387096772" width="211.58798283261805" height="193.54838709677418" as="geometry"/>
+                </mxCell>
+                <mxCell id="63" value="&lt;ul style=&quot;font-size: 16px;&quot;&gt;&lt;li style=&quot;font-size: 16px;&quot;&gt;发布文章&lt;/li&gt;&lt;li style=&quot;font-size: 16px;&quot;&gt;修改文章&lt;/li&gt;&lt;li style=&quot;font-size: 16px;&quot;&gt;删除文章&lt;/li&gt;&lt;li style=&quot;font-size: 16px;&quot;&gt;修改网站信息&lt;/li&gt;&lt;li style=&quot;font-size: 16px;&quot;&gt;删除评论&lt;/li&gt;&lt;li style=&quot;font-size: 16px;&quot;&gt;删除留言&lt;/li&gt;&lt;/ul&gt;" style="text;strokeColor=none;fillColor=none;html=1;whiteSpace=wrap;verticalAlign=middle;overflow=hidden;fontSize=16;" vertex="1" parent="44">
+                    <mxGeometry x="74.67811158798284" y="24.193548387096772" width="186.69527896995712" height="193.54838709677418" as="geometry"/>
+                </mxCell>
+                <mxCell id="67" value="&lt;ul style=&quot;font-size: 16px;&quot;&gt;&lt;li style=&quot;font-size: 16px;&quot;&gt;注册&lt;/li&gt;&lt;li style=&quot;font-size: 16px;&quot;&gt;修改个人信息&lt;/li&gt;&lt;li style=&quot;font-size: 16px;&quot;&gt;注销&lt;/li&gt;&lt;/ul&gt;" style="text;strokeColor=none;fillColor=none;html=1;whiteSpace=wrap;verticalAlign=middle;overflow=hidden;fontSize=16;" vertex="1" parent="44">
+                    <mxGeometry x="261.37339055793996" y="24.193548387096772" width="149.35622317596568" height="193.54838709677418" as="geometry"/>
+                </mxCell>
+                <mxCell id="68" value="&lt;ul style=&quot;font-size: 16px;&quot;&gt;&lt;li style=&quot;font-size: 16px;&quot;&gt;查看文章&lt;/li&gt;&lt;li style=&quot;font-size: 16px;&quot;&gt;发表评论&lt;/li&gt;&lt;li style=&quot;font-size: 16px;&quot;&gt;发表留言&lt;/li&gt;&lt;/ul&gt;" style="text;strokeColor=none;fillColor=none;html=1;whiteSpace=wrap;verticalAlign=middle;overflow=hidden;fontSize=16;" vertex="1" parent="44">
+                    <mxGeometry x="410.72961373390564" y="24.193548387096772" width="136.9098712446352" height="193.54838709677418" as="geometry"/>
+                </mxCell>
+                <mxCell id="45" value="后端" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="73">
+                    <mxGeometry y="423.3870967741934" width="580.0000000000001" height="157.258064516129" as="geometry"/>
+                </mxCell>
+                <mxCell id="69" value="事务控制" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="45">
+                    <mxGeometry x="49.785407725321896" y="36.290322580645146" width="149.35622317596568" height="72.58064516129029" as="geometry"/>
+                </mxCell>
+                <mxCell id="70" value="高速本地缓存" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="45">
+                    <mxGeometry x="224.03433476394852" y="36.290322580645146" width="149.35622317596568" height="72.58064516129029" as="geometry"/>
+                </mxCell>
+                <mxCell id="71" value="记录日志" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="45">
+                    <mxGeometry x="398.28326180257517" y="36.290322580645146" width="149.35622317596568" height="72.58064516129029" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" value="资源" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;startSize=23;fontSize=16;" vertex="1" parent="73">
+                    <mxGeometry y="580.6451612903223" width="580.0000000000001" height="169.3548387096774" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" value="静态资源" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fontSize=16;" vertex="1" parent="46">
+                    <mxGeometry x="112.01716738197426" y="36.29032258064515" width="74.67811158798284" height="96.7741935483871" as="geometry"/>
+                </mxCell>
+                <mxCell id="52" value="DB" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fontSize=16;" vertex="1" parent="46">
+                    <mxGeometry x="261.37339055793996" y="36.29032258064515" width="74.67811158798284" height="96.7741935483871" as="geometry"/>
+                </mxCell>
+                <mxCell id="72" value="网络资源" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fontSize=16;" vertex="1" parent="46">
+                    <mxGeometry x="410.72961373390564" y="36.29032258064515" width="74.67811158798284" height="96.7741935483871" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
